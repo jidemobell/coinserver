@@ -9,13 +9,13 @@ scheduler.addSimpleIntervalJob(job_2);
 
 app.get("/", (req, res) => {
   let message = {message: "welcone to my crypto api"}
-  response.send(message);
+  res.send(message);
 });
 
 app.get("/data", (req, res) => {
   let rawdata = fs.readFileSync("db.json");
   let data = JSON.parse(rawdata);
-  response.send(data);
+  res.send(data);
 });
 
 
