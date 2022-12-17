@@ -3,7 +3,6 @@ const {
   SimpleIntervalJob,
   Task,
 } = require("toad-scheduler");
-const got = require("got");
 
 
 const scheduler = new ToadScheduler();
