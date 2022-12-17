@@ -3,6 +3,7 @@ const {
   SimpleIntervalJob,
   Task,
 } = require("toad-scheduler");
+const fs = require("fs");
 
 
 const scheduler = new ToadScheduler();
@@ -17,11 +18,12 @@ const task = new Task('runner to generate mock Live data', () => {
     rates: { "BTC": generateValues(), "ETH": generateValues() },
     timestamp: 1671204850
    }
-   console.log(data)
+
+   fs.writeFileSync('db.json', JSON.stringify(data));
  })
 
 
-const job_2 = new SimpleIntervalJob({ seconds: 50, }, task)
+const job_2 = new SimpleIntervalJob({ seconds: 10, }, task)
 
 module.exports = {
   scheduler,
