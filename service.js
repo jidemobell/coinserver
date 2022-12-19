@@ -25,7 +25,7 @@ const task = new Task('runner to generate mock Live data', () => {
  })
 
 
-const job_2 = new SimpleIntervalJob({ seconds: 1200, }, task)
+const job_2 = new SimpleIntervalJob({ seconds: 60, }, task)
 
 module.exports = {
   scheduler,
